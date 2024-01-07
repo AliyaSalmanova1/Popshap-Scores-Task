@@ -12,7 +12,6 @@ const Button: React.FC<AppProps> = memo(({ sendToDatabase }) => {
     console.log('button is rendering again!');
 
     const { pathname } = useLocation();
-    console.log('location', location)
 
     const navigate = useNavigate();
 

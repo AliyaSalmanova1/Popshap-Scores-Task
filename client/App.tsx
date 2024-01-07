@@ -48,16 +48,19 @@ const App: React.FC<AppProps> = ({ colRef }) => {
     
     return (
         <BrowserRouter>
-        <Title/>
+        
          <Routes>
+            <Route path="/" element={<Title/>}>
+              <Route path="/" element={<AddScorePage 
+              firstName={firstName}
+              lastName={lastName}
+              score={score}
+              inputHandler={inputHandler}
+              colRef={colRef}/>} />
+              <Route path="scores" element={<ShowScoresPage colRef={colRef}/>} />
+            </Route>
    
-            <Route path="/" element={<AddScorePage 
-            firstName={firstName}
-            lastName={lastName}
-            score={score}
-            inputHandler={inputHandler}
-            colRef={colRef}/>} />
-            <Route path="scores" element={<ShowScoresPage colRef={colRef}/>} />
+            
       
          </Routes>
          <Button sendToDatabase={sendToDatabase}/>
